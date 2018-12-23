@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 外部样式 -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/myCSS.css">
+    <!-- 内部样式 -->
+    <style type="text/css">
+        {
+        }
+    </style>
+    <title>测试页面</title>
+</head>
+
+<body onload="checkCookie()" onunload="leavePage()">
+<!-- 标题 -->
+<h1 style="color:green;text-align:center;">一级标题</h1><!-- 内联样式 -->
+<h2 id="id_h2_second_title">二级标题</h2>
+<h3>three level topic</h3>
+<h4>four level topic</h4><br/>
+
+<!-- 段落 -->
+<p style="font-family:arial;color:red;font-size:18px;">段落1</p>
+<p class="p2">this is p 2</p><br/>
+
+<!-- 分割线 -->
+<hr/>
+<hr/>
+
+<!-- 链接 -->
+<a id="searchEngine" href="https://www.baidu.com/" target="_blank">我的搜索引擎入口</a><br/><br/>
+
+<!-- 图片 -->
+<img src="/images/weixin.jpg" height="40" width="40" alt="一只猫"/>这是我的微信头像<br/><br/>
+
+<!-- 文本 -->
+<b>这是一个<q>很有礼貌的声音</q></b><br/><br/>
+<b>This text is bold</b><br/><br/>
+<strong>This text is strong</strong><br/><br/>
+<em>This text is emphasized</em><br/><br/>
+<i>This text is italic</i><br/><br/>
+<small>This text is small</small>
+<br/><br/>
+This text contains
+<sub>subscript</sub><br/><br/>
+<abbr title="我是liuhaipeng">lhp</abbr><br/><br/>
+<p id="p_del_ins_style">一打有
+    <del>二十</del>
+    <ins>十二</ins>
+    件。
+</p>
+<br/>
+<br/>
+<bdo dir="rtl">朋海刘是我</bdo><br/><br/>
+
+<!-- 跳转 -->
+<a href="#searchEngine">跳转到搜索引擎处</a><br/><br/>
+
+<!-- 表格 -->
+<table border="1">
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    <tr>
+        <td>xiaoliu</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>xiaozhang</td>
+        <td>18</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>20</td>
+    </tr>
+</table>
+<br/>
+
+<!-- 表单 -->
+<form>
+    请输入用户名：<br/>
+    <input type="text" name="username"><br/>
+    请输入密码：<br/>
+    <input type="password" name="psw"><br/><br/>
+    请输入名字：<br/>
+    <input type="text" name="name"><br/><br/>
+    请选择性别：<br/>
+    <input type="radio" name="sex" value="male">男<br/>
+    <input type="radio" name="sex" value="female">女<br/><br/>
+    请选择爱好：<br/>
+    <input type="checkbox" name="interest" value="swimming">有游泳<br/>
+    <input type="checkbox" name="interest" value="walking">竞走<br/>
+    <input type="checkbox" name="interest" value="basketball">篮球<br/><br/>
+    请选择年龄：<br/>
+    <select name="cars">
+        <option value="">18</option>
+        <option value="">19</option>
+        <option value="">20</option>
+        <option value="">21</option>
+    </select>
+    <br/>
+    <br/>
+    <input type="submit" name="submit" value="提交">
+</form>
+<br/>
+
+<b id="id_b_show_whether_ok">very ok!!!</b><br/>
+<button type="button" onclick="showWhetherOk()">点击我！</button>
+<br/><br/>
+
+<b id="id_b_show_evaluate"></b><br/>
+<button type="button" onclick="showEvaluate(5,4)">计算5+4</button>
+<br/><br/>
+
+<form action="" onsubmit="validate_form(this)" method="post">
+    Email: <input type="text" name="email" size="30">
+    <input type="submit" value="Submit">
+</form>
+<br/><br/>
+
+<div class="loop" onclick="clickMeEvent(this)">点击这里</div>
+<br/>
+
+<!-- 脚本 -->
+<script src="/javascripts/myJavaScript.js"></script>
+<br/><br/>
+
+<!-- 样式-->
+<div class="city">
+    <h2>London</h2>
+    <p>London is the capital city of England.</p>
+    <p>It is the most populous city in the United Kingdom,
+        with a metropolitan area of over 13 million inhabitants.</p>
+</div>
+
+<div class="city">
+    <h2>Paris</h2>
+    <p>Paris is the capital and most populous city of France.</p>
+</div>
+
+<div class="city">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+        and the most populous metropolitan area in the world.</p>
+</div>
+
+</body>
+</html>

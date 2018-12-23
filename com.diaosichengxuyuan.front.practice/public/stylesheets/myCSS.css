@@ -1,0 +1,139 @@
+head {
+}
+
+/*body通用样式*/
+body {
+    font-size: 100%;
+    color: black;
+    background-color: darkgrey;
+    text-align: center;
+}
+
+/*标题、段落、链接样式*/
+h1, h2, h4, h5, h6, p, a {
+    background-color: gold;
+    padding: 10px;
+}
+
+/*文本*/
+h3 {
+    text-align: center;
+    text-indent: -5em;
+    padding-left: 5em;
+    width: 20em;
+    word-spacing: 50px;
+    text-transform: capitalize;
+    /*闪烁*/
+    text-decoration: blink;
+    text-decoration: underline overline;
+}
+
+b {
+    font-size: 150%;
+}
+
+/*字体*/
+p.p2 {
+    background-color: darkgrey;
+    font-family: Arial;
+    font-style: italic;
+    word-spacing: 20px;
+    font-weight: 900;
+    /*默认大小是16px，2em=2*16px*/
+    font-size: 2em;
+
+    outline: red dotted;
+}
+
+/*根据id定义样式*/
+#p_del_ins_style {
+    background-color: aqua;
+    font-size: larger;
+}
+
+/*表格*/
+table {
+    border: 1px solid black;
+    background-color: gold;
+    color: blue;
+    text-align: center;
+    vertical-align: center;
+    width: 80%;
+}
+
+th {
+    height: 50px;
+}
+
+td {
+    height: 50px;
+}
+
+/*链接*/
+a:link {
+    text-decoration: none;
+    color: khaki;
+}
+
+a:visited {
+    text-decoration: none;
+    color: red;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: fuchsia;
+}
+
+a:active {
+    text-decoration: underline;
+    color: blue;
+}
+
+/*类选择器*/
+.city {
+    float: left;
+    margin: 5px;
+    padding: 15px 15px 15px 15px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    color: darkviolet;
+
+    background-image: url(../images/java.jpg);
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-position: left;
+    background-position: top;
+}
+
+/*属性选择器*/
+input[type="text"] {
+    width: 150px;
+    height: 20px;
+    color: red;
+}
+
+input[type="button"] {
+    width: 120px;
+    height: 20px;
+}
+
+div.loop {
+    background-color: green;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin: auto;
+
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    font-family: '微软雅黑';
+}
+
+
+
+
+
