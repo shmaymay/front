@@ -1,0 +1,80 @@
+div {
+    margin-bottom: 70px;
+}
+
+#identifierBar_img1 {
+    margin-left: 50px;
+    height: 70px;
+    width: 250px;
+    vertical-align: middle;
+}
+
+#identifierBar_input1 {
+    margin-left: 200px;
+    width: 300px;
+    vertical-align: middle;
+}
+
+#identifierBar_a1 {
+    margin-left: 200px;
+}
+
+#identifierBar_a2 {
+    margin-left: 20px;
+}
+
+#titleBar {
+    margin-left: 50px;
+    margin-right: 20px;
+    padding-left: 70px;
+    background-color: aqua;
+}
+
+#titleBar select {
+    margin-left: 80px;
+    height: 30px;
+    width: 80px;
+    background-color: aqua;
+}
+
+#ticket_img1 {
+    margin-left: 50px;
+    height: 500px;
+    width: 1200px;
+}
+
+#otherService {
+    margin-left: 80px;
+}
+
+/*选择id=otherService的链接里面的图片*/
+#otherService a img {
+    margin-left: 80px;
+    height: 100px;
+    width: 100px;
+}
+
+#specialService {
+    margin-left: 40px;
+}
+
+#specialService table {
+    border: 0px;
+    width: 1200px;
+}
+
+#travel table {
+    margin-left: 50px;
+    border: 0px;
+    height: 100px;
+    width: 1200px;
+}
+
+#travel_b1 {
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+#friendlyLink{
+
+}
