@@ -6,15 +6,17 @@ var logger = require('morgan');
 //新增ejs引擎
 var ejs = require('ejs');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//路由
+var indexRouter = require('./routes/indexRouter');
+var usersRouter = require('./routes/usersRouter');
+var testRouter = require('./routes/testRouter');
+var _12306Router = require('./routes/12306Router');
 
 var app = express();
 
 // view engine setup
 app.engine('.htm', ejs.__express);
 app.set('view engine', 'htm');
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -24,8 +26,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//路径和路由映射
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/test', testRouter);
+app.use('/12306', _12306Router);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
