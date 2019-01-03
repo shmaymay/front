@@ -75,6 +75,72 @@ div {
     font-size: 20px;
 }
 
-#friendlyLink{
+/* 清除样式 */
+#railwayNews ul, li {
+    list-style: none;
+}
 
+/* 将ul相对定位，目的是让内容的div绝对定位时相对ul定位，否则会相对body定位 */
+/* ul弹性盒，目的是让li横着排，也可以将li浮动或者转行内块 */
+#railwayNews ul {
+    position: relative;
+    display: flex;
+}
+
+/* 将三个li宽度平分，高度60px */
+#railwayNews li {
+    flex: 1;
+    height: 60px;
+}
+
+/* input隐藏 */
+#railwayNews input {
+    display: none;
+}
+
+/* 设置input的下一个节点label的样式 */
+#railwayNews input + label {
+    display: block;
+    width: 100%;
+    height: 60%;
+    background: #ccc;
+    font-size: 18px;
+    text-align: center;
+    line-height: 35px;
+    color: #333;
+}
+
+/* 设置div内容的基础样式 隐藏内容div*/
+#railwayNews input + label + div {
+    display: none;
+    position: absolute;
+    left: 40px;
+    top: 60px;
+}
+
+/* input选中状态时候对应的label的样式 */
+#railwayNews input:checked + label {
+    background: aqua;
+    color: black;
+}
+
+/* input选中时候显示对应的div */
+#railwayNews input:checked + label + div {
+    display: block;
+}
+
+#friendlyLink {
+    margin-top: 150px;
+    background-color: aliceblue;
+}
+
+#friendlyLink_b1 {
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+#friendlyLink img {
+    margin-left: 50px;
+    height: 100px;
+    width: 300px;
 }
