@@ -1,18 +1,31 @@
 div {
+    margin-left: 30px;
     margin-bottom: 70px;
+    width: 1200px;
+}
+
+#identifierBar {
+    height: 70px;
 }
 
 #identifierBar_img1 {
-    margin-left: 50px;
+    margin-left: 0px;
     height: 70px;
     width: 250px;
     vertical-align: middle;
 }
 
-#identifierBar_input1 {
-    margin-left: 200px;
-    width: 300px;
-    vertical-align: middle;
+#identifierBar_div1 {
+    display: inline;
+}
+
+#identifierBar_div1_input1 {
+    margin-left: 160px;
+    width: 400px;
+}
+
+#identifierBar_div1_input2 {
+    width: 40px;
 }
 
 #identifierBar_a1 {
@@ -24,38 +37,39 @@ div {
 }
 
 #titleBar {
-    margin-left: 50px;
-    margin-right: 20px;
-    padding-left: 70px;
     background-color: aqua;
+    height: 30px;
 }
 
 #titleBar select {
-    margin-left: 80px;
+    margin-left: 95px;
     height: 30px;
     width: 80px;
     background-color: aqua;
 }
 
+#ticket {
+    height: 500px;
+}
+
 #ticket_img1 {
-    margin-left: 50px;
+    margin-left: 0px;
     height: 500px;
     width: 1200px;
 }
 
 #otherService {
-    margin-left: 80px;
+    height: 100px;
 }
 
 /*选择id=otherService的链接里面的图片*/
 #otherService a img {
-    margin-left: 80px;
+    margin-left: 100px;
     height: 100px;
     width: 100px;
 }
 
 #specialService {
-    margin-left: 40px;
 }
 
 #specialService table {
@@ -63,15 +77,17 @@ div {
     width: 1200px;
 }
 
+#travel {
+}
+
 #travel table {
-    margin-left: 50px;
+    margin-left: 0px;
     border: 0px;
-    height: 100px;
     width: 1200px;
 }
 
 #travel_b1 {
-    margin-left: 50px;
+    margin-left: 2px;
     font-size: 20px;
 }
 
@@ -103,18 +119,20 @@ div {
     display: block;
     width: 100%;
     height: 60%;
-    background: #ccc;
+    background: darkgrey;
     font-size: 18px;
     text-align: center;
     line-height: 35px;
     color: #333;
+    margin-left: -35px;
+    padding-right: 25px;
 }
 
 /* 设置div内容的基础样式 隐藏内容div*/
 #railwayNews input + label + div {
     display: none;
     position: absolute;
-    left: 40px;
+    left: 70px;
     top: 60px;
 }
 
@@ -135,7 +153,7 @@ div {
 }
 
 #friendlyLink_b1 {
-    margin-left: 50px;
+    margin-left: 55px;
     font-size: 20px;
 }
 

@@ -10,9 +10,12 @@
 <body>
 <div id="identifierBar">
     <img id="identifierBar_img1" src="/images/12306_identifier.jpg"/>
-    <input id="identifierBar_input1" type="text"/>搜索
-    <a id="identifierBar_a1" href="https://www.12306.cn">登录</a>
-    <a id="identifierBar_a2" href="https://www.12306.cn">注册</a>
+    <div id="identifierBar_div1">
+        <input id="identifierBar_div1_input1" type="text">
+        <input id="identifierBar_div1_input2" type="button" value="搜索" onclick="onSearch()">
+    </div>
+    <a id="identifierBar_a1" href="https://kyfw.12306.cn/otn/resources/login.html">登录</a>
+    <a id="identifierBar_a2" href="https://kyfw.12306.cn/otn/regist/init">注册</a>
 </div>
 
 <div id="titleBar">
@@ -62,19 +65,19 @@
 <div id="specialService">
     <table>
         <tr>
-            <td><img src="/images/12306_specialService1.jpg" width="95%" height="100%"></td>
-            <td><img src="/images/12306_specialService2.jpg" width="95%" height="100%"></td>
+            <td><img src="/images/12306_specialService1.jpg" width="100%" height="100%"></td>
+            <td><img src="/images/12306_specialService2.jpg" width="100%" height="100%"></td>
         </tr>
         <tr>
-            <td><img src="/images/12306_specialService3.jpg" width="95%" height="100%"></td>
-            <td><img src="/images/12306_specialService4.jpg" width="95%" height="100%"></td>
+            <td><img src="/images/12306_specialService3.jpg" width="100%" height="100%"></td>
+            <td><img src="/images/12306_specialService4.jpg" width="100%" height="100%"></td>
         </tr>
     </table>
 </div>
 
 <div id="travel">
     <b id="travel_b1">铁路旅游</b>
-    <table>
+    <table id="travel_table1">
         <tr>
             <td><img src="/images/12306_travel1.jpg" width="80%" height="80%"></td>
             <td><img src="/images/12306_travel2.jpg" width="80%" height="80%"></td>
@@ -113,5 +116,7 @@
     <b id="friendlyLink_b1">铁路旅游</b><br/>
     <img src="/images/12306_friendlyLink.jpg">
 </div>
+
+<script src="/javascripts/12306.js"></script>
 </body>
 </html>
