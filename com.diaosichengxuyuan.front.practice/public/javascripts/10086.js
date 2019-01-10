@@ -13,6 +13,7 @@ scroll_img_ids[3] = "main_picture_area_li_img4";
 var minFrame = 0;
 var maxFrame = 3;
 var nowFrame = minFrame;
+var speed = 2000;
 
 var main_picture_area_img1_id = "main_picture_area_img1";
 var real_point_img = "/images/black.jpg";
@@ -36,7 +37,7 @@ function getPreFrame(minFrame, maxFrame, nowFrame) {
     return nowFrame - 1;
 }
 
-var theTimer = setInterval("loopShow()", 3000);
+var theTimer = setInterval("loopShow()", speed);
 
 function show(nowFrame) {
     clearInterval(theTimer);
@@ -55,5 +56,21 @@ function show(nowFrame) {
 function hide(nowFrame) {
     document.getElementById(scroll_img_ids[nowFrame]).src = virtual_point_img;
     loopShow();
-    theTimer = setInterval("loopShow()", 3000);
+    theTimer = setInterval("loopShow()", speed);
 }
+
+
+$(document).ready(function () {
+    var speed = 1000;
+    //一次移动多少个元素
+    var scrollNum = 1;
+
+    var scrollFunc = function scroll() {
+        for (var i = 0; i < scrollNum; i++) {
+            //将列表第一个元素移动到最后一个元素之后，由于位置是float的，所以会自动向前移动
+            $("#rolling_area_box_ul").find("li").last().after($("#rolling_area_box_ul").find("li").first());
+        }
+    }
+
+    setInterval(scrollFunc, speed);
+});
