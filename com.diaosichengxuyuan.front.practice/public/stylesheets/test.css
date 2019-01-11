@@ -100,7 +100,7 @@ a:active {
     border: 1px solid red;
     color: darkviolet;
 
-    background-image: url(../images/java.jpg);
+    background-image: url(../images/test/java.jpg);
     background-repeat: repeat-x;
     background-repeat: repeat-y;
     background-position: left;

@@ -1,8 +1,8 @@
 var scroll_imgs = new Array(4);
-scroll_imgs[0] = "/images/10086_guanggao_qiehuan1.jpg";
-scroll_imgs[1] = "/images/10086_guanggao_qiehuan2.jpg";
-scroll_imgs[2] = "/images/10086_guanggao_qiehuan3.jpg";
-scroll_imgs[3] = "/images/10086_guanggao_qiehuan4.jpg";
+scroll_imgs[0] = "/images/10086/guanggao_qiehuan1.jpg";
+scroll_imgs[1] = "/images/10086/guanggao_qiehuan2.jpg";
+scroll_imgs[2] = "/images/10086/guanggao_qiehuan3.jpg";
+scroll_imgs[3] = "/images/10086/guanggao_qiehuan4.jpg";
 
 var scroll_img_ids = new Array(4);
 scroll_img_ids[0] = "main_picture_area_li_img1";
@@ -16,8 +16,8 @@ var nowFrame = minFrame;
 var speed = 2000;
 
 var main_picture_area_img1_id = "main_picture_area_img1";
-var real_point_img = "/images/black.jpg";
-var virtual_point_img = "/images/white.jpg";
+var real_point_img = "/images/10086/black.jpg";
+var virtual_point_img = "/images/10086/white.jpg";
 
 function loopShow() {
     if (nowFrame > maxFrame) {
