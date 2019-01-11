@@ -10,6 +10,7 @@ div {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 .welcome {
@@ -106,8 +107,26 @@ a {
 
 .small_business_tab {
     float: left;
-    width: 205px;
+    width: 185px;
     margin-left: 30px;
+}
+
+.top_up {
+}
+
+#top_up_input1 {
+    height: 30px;
+    width: 150px;
+    margin-top: 30px;
+    margin-left: 10px;
+    background-color: azure;
+}
+
+#top_up_input2 {
+    width: 40px;
+    margin-left: 5px;
+    background-color: azure;
+    font-weight: bold;
 }
 
 .rolling_area {
@@ -320,7 +339,7 @@ a {
     vertical-align: middle;
 }
 
-#end_page_fifth_line_a2{
+#end_page_fifth_line_a2 {
     margin-left: 20px;
 }
 

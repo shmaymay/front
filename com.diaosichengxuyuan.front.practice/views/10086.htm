@@ -41,19 +41,19 @@
 
 <div class="main_business">
     <ul class="all_product_list">
-        <li>办业务</li>
+        <li onmouseover="leftShow(0)" onmouseout="leftHide(0)">办业务&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></li>
         <br/>
-        <li>买手机</li>
+        <li onmouseover="leftShow(1)" onmouseout="leftHide(1)">买手机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></li>
         <br/>
-        <li>套餐/靓号</li>
+        <li onmouseover="leftShow(2)" onmouseout="leftHide(2)">套餐/靓号&nbsp;&nbsp;></li>
         <br/>
-        <li>家庭业务</li>
+        <li onmouseover="leftShow(3)" onmouseout="leftHide(3)">家庭业务&nbsp;&nbsp;&nbsp;></li>
         <br/>
-        <li>智能硬件</li>
+        <li onmouseover="leftShow(4)" onmouseout="leftHide(4)">智能硬件&nbsp;&nbsp;&nbsp;></li>
         <br/>
-        <li>查询服务</li>
+        <li onmouseover="leftShow(5)" onmouseout="leftHide(5)">查询服务&nbsp;&nbsp;&nbsp;></li>
         <br/>
-        <li>特色专区</li>
+        <li onmouseover="leftShow(6)" onmouseout="leftHide(6)">特色专区&nbsp;&nbsp;&nbsp;></li>
         <br/>
     </ul>
     <div class="main_picture_area">
@@ -91,6 +91,11 @@
             <td><img src="/images/10086/small_business6.jpg" width="80%" height="80%"></td>
         </tr>
     </table>
+    <div class="top_up">
+        <input id="top_up_input1" type="text" value="请输入号码">
+        <input id="top_up_input2" type="submit" value="充值"
+               onclick="openNewWindow('https://shop.10086.cn/i/?f=rechargecredit&mobileNo=15895974680&amount=30')">
+    </div>
 </div>
 
 <div class="rolling_area">

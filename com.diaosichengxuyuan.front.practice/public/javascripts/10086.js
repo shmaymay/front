@@ -10,6 +10,15 @@ scroll_img_ids[1] = "main_picture_area_li_img2";
 scroll_img_ids[2] = "main_picture_area_li_img3";
 scroll_img_ids[3] = "main_picture_area_li_img4";
 
+var left_show_imgs = new Array(4);
+left_show_imgs[0] = "/images/10086/left_show1.png";
+left_show_imgs[1] = "/images/10086/left_show2.png";
+left_show_imgs[2] = "/images/10086/left_show3.png";
+left_show_imgs[3] = "/images/10086/left_show4.png";
+left_show_imgs[4] = "/images/10086/left_show5.png";
+left_show_imgs[5] = "/images/10086/left_show6.png";
+left_show_imgs[6] = "/images/10086/left_show7.png";
+
 var minFrame = 0;
 var maxFrame = 3;
 var nowFrame = minFrame;
@@ -59,6 +68,22 @@ function hide(nowFrame) {
     theTimer = setInterval("loopShow()", speed);
 }
 
+function leftShow(line) {
+    clearInterval(theTimer);
+    $("#main_picture_area_img1").attr("src", left_show_imgs[line]);
+    for (var i = 0; i < scroll_img_ids.length; i++) {
+        $("#" + scroll_img_ids[i]).hide();
+    }
+}
+
+function leftHide(line) {
+    for (var i = 0; i < scroll_img_ids.length; i++) {
+        $("#" + scroll_img_ids[i]).show();
+    }
+    loopShow();
+    theTimer = setInterval("loopShow()", speed);
+}
+
 
 $(document).ready(function () {
     var speed = 1000;
@@ -74,3 +99,8 @@ $(document).ready(function () {
 
     setInterval(scrollFunc, speed);
 });
+
+
+function openNewWindow(url) {
+    window.open(url, "_blank");
+}
