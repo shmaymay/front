@@ -101,7 +101,6 @@ $(document).ready(function () {
     setInterval(scrollFunc, speed);
 });
 
-
 function openNewWindow(url) {
     window.open(url, "_blank");
 }
