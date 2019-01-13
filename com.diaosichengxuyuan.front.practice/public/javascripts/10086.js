@@ -28,7 +28,9 @@ var main_picture_area_img1_id = "main_picture_area_img1";
 var real_point_img = "/images/10086/black.jpg";
 var virtual_point_img = "/images/10086/white.jpg";
 
-function loopShow() {
+var theTimer;
+
+var loopShowFunc = function loopShow() {
     if (nowFrame > maxFrame) {
         nowFrame = minFrame;
     }
@@ -46,8 +48,6 @@ function getPreFrame(minFrame, maxFrame, nowFrame) {
     return nowFrame - 1;
 }
 
-var theTimer = setInterval("loopShow()", speed);
-
 function show(nowFrame) {
     clearInterval(theTimer);
 
@@ -64,13 +64,14 @@ function show(nowFrame) {
 
 function hide(nowFrame) {
     document.getElementById(scroll_img_ids[nowFrame]).src = virtual_point_img;
-    loopShow();
-    theTimer = setInterval("loopShow()", speed);
+    loopShowFunc();
+    theTimer = setInterval(loopShowFunc, speed);
 }
 
 function leftShow(line) {
-    clearInterval(theTimer);
+    debugger
     $("#main_picture_area_img1").attr("src", left_show_imgs[line]);
+    clearInterval(theTimer);
     for (var i = 0; i < scroll_img_ids.length; i++) {
         $("#" + scroll_img_ids[i]).hide();
     }
@@ -80,23 +81,23 @@ function leftHide(line) {
     for (var i = 0; i < scroll_img_ids.length; i++) {
         $("#" + scroll_img_ids[i]).show();
     }
-    loopShow();
-    theTimer = setInterval("loopShow()", speed);
+    loopShowFunc();
+    theTimer = setInterval(loopShowFunc, speed);
 }
 
+var speed = 1000;
+//一次移动多少个元素
+var scrollNum = 1;
+
+var scrollFunc = function scroll() {
+    for (var i = 0; i < scrollNum; i++) {
+        //将列表第一个元素移动到最后一个元素之后，由于位置是float的，所以会自动向前移动
+        $("#rolling_area_box_ul").find("li").last().after($("#rolling_area_box_ul").find("li").first());
+    }
+}
 
 $(document).ready(function () {
-    var speed = 1000;
-    //一次移动多少个元素
-    var scrollNum = 1;
-
-    var scrollFunc = function scroll() {
-        for (var i = 0; i < scrollNum; i++) {
-            //将列表第一个元素移动到最后一个元素之后，由于位置是float的，所以会自动向前移动
-            $("#rolling_area_box_ul").find("li").last().after($("#rolling_area_box_ul").find("li").first());
-        }
-    }
-
+    theTimer = setInterval(loopShowFunc, speed);
     setInterval(scrollFunc, speed);
 });
 
