@@ -10,11 +10,14 @@
 *.tar.gz
 *.rar
 
-### IntelliJ IDEA ###
+# IntelliJ IDEA
 .idea
 *.iws
 *.iml
 *.ipr
 
-### lib ###
+# nodejs
 node_modules/
+
+# VS Code
+*.vscode
