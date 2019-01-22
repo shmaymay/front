@@ -69,7 +69,6 @@ function hide(nowFrame) {
 }
 
 function leftShow(line) {
-    debugger
     $("#main_picture_area_img1").attr("src", left_show_imgs[line]);
     clearInterval(theTimer);
     for (var i = 0; i < scroll_img_ids.length; i++) {
