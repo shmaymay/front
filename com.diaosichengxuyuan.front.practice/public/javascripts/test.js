@@ -130,7 +130,7 @@ function checkCookie() {
 $.ajax({
     type: "GET",
     url: "http://localhost:7001/test/selectAll",
-    dateType: "json",
+    dataType: "json",
     success: function (res) {
         for (var i = 0; i < res.length; i++) {
             $("#all_users").append("<p>用户名：" + res[i].id + "；姓名：" + res[i].name1 + "；年龄：" + res[i].age + "；地址：" + res[i].location + "</p>");
