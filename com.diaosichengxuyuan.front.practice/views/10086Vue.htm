@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>中国移动官方网站</title>
+    <link rel="shortcut icon" href="/images/10086/favicon.ico" type="images/x-icon">
+
+    <!-- 样式 -->
+    <link rel="stylesheet" href="/stylesheets/10086.css" type="text/css">
+
+    <!-- vue -->
+    <script src="javascripts/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <div class="welcome">
+        <a v-bind:id="model.id" v-bind:href="model.link" v-for="model in models"
+            target="_blank">{{model.description}}</a>
+    </div>
+    <script>
+        new Vue({
+            el: ".welcome",
+            data: {
+                models: [
+                    {
+                        id: "welcome_first",
+                        description: "欢迎来到中国移动网站"
+                    },
+                    {
+                        id: "welcome_a1",
+                        link: "https://login.10086.cn/login.html?channelID=12034&backUrl=http%3A%2F%2Fwww.10086.cn%2Findex%2Fzj%2Findex_571_571.html%3FWT.mc_id%3D8t0xsDMfVa8hgIN138jM_B8XzfMN8aGRkCM0Auoor1546864254.015wm0x42d120o74t101xm0w",
+                        description: "请登录"
+                    },
+                    {
+                        id: "welcome_a2",
+                        link: "https://shop.10086.cn/i/?f=home",
+                        description: "个人中心"
+                    },
+                    {
+                        id: "welcome_a3",
+                        description: "中国移动客户端"
+                    },
+                    {
+                        link: "http://jf.10086.cn/",
+                        description: "积分商城"
+                    },
+                    {
+                        id: "welcome_a5",
+                        link: "https://open.10086.cn/",
+                        description: "能力开放商店"
+                    },
+                    {
+                        link: "http://www.10086.cn/aboutus/index/zj/",
+                        description: "关于中国移动"
+                    },
+                    {
+                        link: "http://www.10086.cn/web_notice/contact/",
+                        description: "联系我们"
+                    },
+                    {
+                        link: "http://www.zj.10086.cn/group/",
+                        description: "政企客户"
+                    },
+                    {
+                        link: "https://www.chinamobileltd.com/en/global/home.php",
+                        description: "ENGLISH"
+                    }
+                ]
+            }
+        })
+    </script>
+
+    <div>
+        <a href="https://shop.10086.cn/hd/dlqqt/571.html?WT.mc_id=1812_NQQT_PCMH3" target="_blank"><img
+                src="/images/10086/guanggao.jpg" width="1200px" height="100px"></a>
+    </div>
+
+    <div class="title_bar">
+        <a v-bind:id="model.id" v-bind:href="model.link" target="_blank"
+            v-for="model in models">{{model.description}}</a>
+    </div>
+    <script>
+        new Vue({
+            el: ".title_bar",
+            data: {
+                models: [
+                    {
+                        id: "title_bar_a1",
+                        description: "全部产品服务"
+                    },
+                    {
+                        id: "title_bar_a2",
+                        link: "http://www.10086.cn/index/zj/index_571_571.html",
+                        description: "首页"
+                    }, {
+                        link: "https://shop.10086.cn/mall_571_571.html",
+                        description: "移动商城"
+                    },
+                    {
+                        link: "http://service.zj.10086.cn/",
+                        description: "网上营业厅"
+                    },
+                    {
+                        link: "https://zj.ac.10086.cn/POST",
+                        description: "我的移动"
+                    },
+                    {
+                        link: "http://www.10086.cn/support/zj/",
+                        description: "服务中心"
+                    }
+                ]
+            }
+        })
+    </script>
+
+    <div class="main_business">
+        <ul class="all_product_list">
+            <li v-on:mouseover="leftShow(index)" v-on:mouseout="leftHide(index)" v-for="(product,index) in productList">
+                {{product}}</li>
+        </ul>
+        <div class="main_picture_area">
+            <img id="main_picture_area_img1" v-bind:src="changeMainPic">
+            <div id="main_picture_area_scroll_number">
+                <ul>
+                    <li v-bind:id="mainPictureArea.id1" v-on:mouseover="show(index)" v-on:mouseout="hide(index)"
+                        v-for="(mainPictureArea,index) in mainPictureAreas"><img v-bind:id="mainPictureArea.id2"
+                            v-bind:src="mainPictureArea.picture" v-show="mainPictureArea.isShow">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <table class="small_business_tab">
+            <tr v-for="smallBuinessArea in smallBuinessAreas">
+                <td v-for="smallBusiness in smallBuinessArea"><img v-bind:src="smallBusiness" width="80%" height="80%">
+                </td>
+            </tr>
+        </table>
+        <div class="top_up">
+            <input id="top_up_input1" type="text" value="请输入号码">
+            <input id="top_up_input2" type="submit" value="充值"
+                v-on:click="openNewWindow('https://shop.10086.cn/i/?f=rechargecredit&mobileNo=15895974680&amount=30')">
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: ".main_business",
+            data: {
+                productList: [
+                    "办业务",
+                    "买手机",
+                    "套餐/靓号",
+                    "家庭业务",
+                    "智能硬件",
+                    "查询服务",
+                    "特色专区"
+                ],
+                mainPictureAreas: [
+                    {
+                        id1: "main_picture_area_li1",
+                        id2: "main_picture_area_li_img1",
+                        picture: "/images/10086/black.jpg",
+                        isShow: true
+                    },
+                    {
+                        id1: "main_picture_area_li2",
+                        id2: "main_picture_area_li_img2",
+                        picture: "/images/10086/white.jpg",
+                        isShow: true
+                    },
+                    {
+                        id1: "main_picture_area_li3",
+                        id2: "main_picture_area_li_img3",
+                        picture: "/images/10086/white.jpg",
+                        isShow: true
+                    },
+                    {
+                        id1: "main_picture_area_li4",
+                        id2: "main_picture_area_li_img4",
+                        picture: "/images/10086/white.jpg",
+                        isShow: true
+                    }
+                ],
+                smallBuinessAreas: [
+                    [
+                        "/images/10086/small_business1.jpg",
+                        "/images/10086/small_business2.jpg",
+                        "/images/10086/small_business3.jpg"
+                    ],
+                    [
+                        "/images/10086/small_business4.jpg",
+                        "/images/10086/small_business5.jpg",
+                        "/images/10086/small_business6.jpg"
+                    ]
+                ],
+                scroll_imgs: [
+                    "/images/10086/guanggao_qiehuan1.jpg",
+                    "/images/10086/guanggao_qiehuan2.jpg",
+                    "/images/10086/guanggao_qiehuan3.jpg",
+                    "/images/10086/guanggao_qiehuan4.jpg"
+                ],
+                left_show_imgs: [
+                    "/images/10086/left_show1.png",
+                    "/images/10086/left_show2.png",
+                    "/images/10086/left_show3.png",
+                    "/images/10086/left_show4.png",
+                    "/images/10086/left_show5.png",
+                    "/images/10086/left_show6.png",
+                    "/images/10086/left_show7.png"
+                ],
+                minFrame: 0,
+                maxFrame: 3,
+                nowFrame: 0,
+                speed: 1000,
+                real_point_img: "/images/10086/black.jpg",
+                virtual_point_img: "/images/10086/white.jpg",
+                theTimer: {},
+                changeMainPic: "/images/10086/guanggao_qiehuan1.jpg"
+            },
+            methods: {
+                loopShowFunc: function loopShow() {
+                    this.changeMainPic = this.scroll_imgs[this.nowFrame];
+                    this.mainPictureAreas[this.nowFrame].picture = this.real_point_img;
+                    this.mainPictureAreas[this.getPreFrame(this.minFrame, this.maxFrame, this.nowFrame)].picture = this.virtual_point_img;
+                    this.nowFrame++;
+                    if (this.nowFrame > this.maxFrame) {
+                        this.nowFrame = this.minFrame;
+                    }
+                },
+                getPreFrame: function (minFrame, maxFrame, nowFrame) {
+                    if (nowFrame == minFrame) {
+                        return maxFrame;
+                    }
+                    return nowFrame - 1;
+                },
+                show: function (line) {
+                    clearInterval(this.theTimer);
+                    this.changeMainPic = this.scroll_imgs[line];
+                    for (var i = this.minFrame; i <= this.maxFrame; i++) {
+                        if (i == line) {
+                            this.mainPictureAreas[i].picture = this.real_point_img;
+                        } else {
+                            this.mainPictureAreas[i].picture = this.virtual_point_img;
+                        }
+                    }
+                },
+                hide: function (line) {
+                    this.mainPictureAreas[line].picture = this.virtual_point_img;
+                    this.loopShowFunc();
+                    this.theTimer = setInterval(this.loopShowFunc, this.speed);
+                },
+                leftShow: function (line) {
+                    this.changeMainPic = this.left_show_imgs[line];
+                    clearInterval(this.theTimer);
+                    for (var i = 0; i < this.mainPictureAreas.length; i++) {
+                        this.mainPictureAreas[i].isShow = false;
+                    }
+                },
+                leftHide: function (line) {
+                    for (var i = 0; i < this.mainPictureAreas.length; i++) {
+                        this.mainPictureAreas[i].isShow = true;
+                    }
+                    this.loopShowFunc();
+                    this.theTimer = setInterval(this.loopShowFunc, this.speed);
+                },
+                openNewWindow: function (url) {
+                    window.open(url, "_blank");
+                },
+            },
+            created: function () {
+                this.theTimer = setInterval(this.loopShowFunc, this.speed);
+            }
+        })
+    </script>
+
+    <div class="rolling_area">
+        <a href="http://www.10086.cn/support/service/events/zj/index_571_571.html" target="_blank"><img
+                class="rolling_area_pic" src="/images/10086/rolling_area1.jpg"></a>
+        <div class="rolling_area_box_div">
+            <ul id="rolling_area_box_ul">
+                <li><img v-bind:src="picture1"></li>
+                <li><img v-bind:src="picture2"></li>
+                <li><img v-bind:src="picture3"></li>
+                <li><img v-bind:src="picture4"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#rolling_area_box_ul",
+            data: {
+                picture1: "/images/10086/rolling_area2.jpg",
+                picture2: "/images/10086/rolling_area3.jpg",
+                picture3: "/images/10086/rolling_area4.jpg",
+                picture4: "/images/10086/rolling_area5.jpg",
+            },
+            methods: {
+                scrollFunc: function () {
+                    var temp = this.picture1;
+                    this.picture1 = this.picture2;
+                    this.picture2 = this.picture3;
+                    this.picture3 = this.picture4;
+                    this.picture4 = temp;
+                }
+            },
+            created: function () {
+                setInterval(this.scrollFunc, 1000);
+            }
+        })
+    </script>
+
+    <div class="_1F_discount">
+        <p id="_1F_discount_p">1F 享优惠</p>
+        <img v-bind:id="model.id" v-bind:class="model.class" v-bind:src="model.picture" v-for="model in models">
+    </div>
+    <script>
+        new Vue({
+            el: "._1F_discount",
+            data: {
+                models: [
+                    {
+                        id: "_1F_discount_img1",
+                        picture: "/images/10086/1F_discount1.jpg"
+                    },
+                    {
+                        class: "_1F_discount_img",
+                        picture: "/images/10086/1F_discount2.jpg"
+                    },
+                    {
+                        class: "_1F_discount_img",
+                        picture: "/images/10086/1F_discount3.jpg"
+                    },
+                    {
+                        class: "_1F_discount_img",
+                        picture: "/images/10086/1F_discount4.jpg"
+                    },
+                    {
+                        id: "_1F_discount_img5",
+                        picture: "/images/10086/1F_discount5.jpg"
+                    },
+                    {
+                        id: "_1F_discount_img6",
+                        picture: "/images/10086/1F_discount6.jpg"
+                    }
+                ]
+            }
+        })
+    </script>
+
+    <div class="_2F_business_recommend">
+        <p id="_2F_business_recommend_p">2F 业务推荐</p>
+        <img v-bind:id="model.id" v-bind:class="model.class" v-bind:src="model.picture" v-for="model in models">
+    </div>
+    <script>
+        new Vue({
+            el: "._2F_business_recommend",
+            data: {
+                models: [
+                    {
+                        id: "_2F_business_recommend_img1",
+                        picture: "/images/10086/2F_business_recommend1.jpg"
+                    },
+                    {
+                        class: "_2F_business_recommend_img",
+                        picture: "/images/10086/2F_business_recommend2.jpg"
+                    },
+                    {
+                        class: "_2F_business_recommend_img",
+                        picture: "/images/10086/2F_business_recommend3.jpg"
+                    },
+                    {
+                        class: "_2F_business_recommend_img",
+                        picture: "/images/10086/2F_business_recommend4.jpg"
+                    },
+                    {
+                        id: "",
+                        class: "_2F_business_recommend_img",
+                        picture: "/images/10086/2F_business_recommend5.jpg"
+                    },
+                    {
+                        class: "_2F_business_recommend_img",
+                        picture: "/images/10086/2F_business_recommend6.jpg"
+                    },
+                    {
+                        class: "_2F_business_recommend_img",
+                        picture: "/images/10086/2F_business_recommend7.jpg"
+                    },
+                    {
+                        id: "_2F_business_recommend_img8",
+                        picture: "/images/10086/2F_business_recommend8.jpg"
+                    }
+                ]
+            }
+        })
+    </script>
+
+    <div class="_3F_phone_area">
+        <p id="_3F_phone_area_p">3F 手机专区</p>
+        <img v-bind:id="model.id" v-bind:class="model.class" v-bind:src="model.picture" v-for="model in models">
+    </div>
+    <script>
+        new Vue({
+            el: "._3F_phone_area",
+            data: {
+                models: [
+                    {
+                        id: "_3F_phone_area_img1",
+                        picture: "/images/10086/3F_phone_area1.jpg"
+                    },
+                    {
+                        class: "_3F_phone_area_img",
+                        picture: "/images/10086/3F_phone_area2.jpg"
+                    },
+                    {
+                        class: "_3F_phone_area_img",
+                        picture: "/images/10086/3F_phone_area3.jpg"
+                    },
+                    {
+                        class: "_3F_phone_area_img",
+                        picture: "/images/10086/3F_phone_area4.jpg"
+                    },
+                    {
+                        class: "_3F_phone_area_img",
+                        picture: "/images/10086/3F_phone_area5.jpg"
+                    },
+                    {
+                        class: "_3F_phone_area_img",
+                        picture: "/images/10086/3F_phone_area6.jpg"
+                    },
+                    {
+                        class: "_3F_phone_area_img",
+                        picture: "/images/10086/3F_phone_area7.jpg"
+                    },
+                    {
+                        id: "_3F_phone_area_img8",
+                        picture: "/images/10086/3F_phone_area8.jpg"
+                    }
+                ]
+            }
+        })
+    </script>
+
+    <div class="_4F_smart_hardware">
+        <p id="_4F_smart_hardware_p">4F 智能硬件</p>
+        <img id="_4F_smart_hardware_img1" src="/images/10086/4F_smart_hardware1.jpg">
+    </div>
+
+    <div class="_5F_migoo_happy">
+        <p id="_5F_migoo_happy_p">5F 咪咕娱乐</p>
+        <img id="_5F_migoo_happy_img1" src="/images/10086/migoo_happy.jpg">
+    </div>
+
+    <div class="guess_you_like">
+        <p>猜你喜欢</p>
+        <img v-bind:src="picture" v-for="picture in pictures">
+    </div>
+    <script>
+        new Vue({
+            el: ".guess_you_like",
+            data: {
+                pictures: [
+                    "/images/10086/guess_you_like1.jpg",
+                    "/images/10086/guess_you_like2.jpg",
+                    "/images/10086/guess_you_like3.jpg",
+                    "/images/10086/guess_you_like4.jpg"
+                ]
+            }
+        })
+    </script>
+
+    <div class="special_area">
+        <p>特色专区</p>
+        <img v-bind:src="picture" v-for="picture in pictures">
+    </div>
+    <script>
+        new Vue({
+            el: ".special_area",
+            data: {
+                pictures: [
+                    "/images/10086/special_area1.jpg",
+                    "/images/10086/special_area2.jpg",
+                    "/images/10086/special_area3.jpg",
+                    "/images/10086/special_area4.jpg"
+                ]
+            }
+        })
+    </script>
+
+    <div class="common_link">
+        <table>
+            <tr>
+                <th v-for="th in ths">{{th}}</th>
+            </tr>
+            <tr v-for="row in rows">
+                <td v-for="cell in row">{{cell}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        new Vue({
+            el: ".common_link",
+            data: {
+                ths: [
+                    "服务渠道",
+                    "站点导航",
+                    "快捷服务",
+                    "常见问题",
+                    "服务指南"
+                ],
+                rows: [
+                    [
+                        "自助终端",
+                        "MM",
+                        "话费查询",
+                        "电子发票",
+                        "购物指南"
+                    ], [
+                        "10086热线",
+                        "和飞信",
+                        "在线充值",
+                        "10086小贴士",
+                        "付款方式"
+                    ],
+                    [
+                        "实体营业厅",
+                        "和包",
+                        "网上选号入网",
+                        "号码归属地查询",
+                        "物流配送"
+                    ],
+                    [
+                        "短信营业厅",
+                        "咪咕阅读",
+                        "投诉工单查询",
+                        "办理停复机",
+                        "售后服务"
+                    ],
+                    [
+                        "网上营业厅",
+                        "139邮箱",
+                        "流量充值",
+                        "客户密码服务",
+                        "个人中心"
+                    ],
+                    [
+                        "客户端/掌上营业厅",
+                        "能力开放商店",
+                        "已订业务查询",
+                        "模糊认证",
+                        "网站服务协议"
+                    ]
+                ]
+            }
+        })
+    </script>
+
+    <div class="end_page">
+        <div id="end_page_first_line">
+            <a v-bind:href="firstLine.href" target="_blank"
+                v-for="firstLine in firstLineData">{{firstLine.description}}</a>
+        </div>
+        <div id="end_page_second_line">
+            <a v-for="scondLine in secondLineData">{{scondLine}}</a>
+        </div>
+        <div id="end_page_third_line">
+            <a v-for="thirdLine in thirdLineData">{{thirdLine}}</a>
+        </div>
+        <div id="end_page_fourth_line">
+            <a v-for="fourthLine in fourthLineData">{{fourthLine}}</a>
+        </div>
+        <div id="end_page_fifth_line">
+            <a href="https://ss.knet.cn/verifyseal.dll?sn=e130905110100423008ilb000000&pa=512111"><img
+                    src="/images/10086/trust_site.jpg"></a>
+            <a id="end_page_fifth_line_a2">京ICP备05002571号</a>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: ".end_page",
+            data: {
+                firstLineData: [
+                    {
+                        href: "http://www.10086.cn/aboutus/news/index/zj",
+                        description: "新闻中心"
+                    },
+                    {
+                        href: "https://job.10086.cn",
+                        description: "诚聘英才"
+                    },
+                    {
+                        href: "http://www.10086.cn/aboutus/hezuo/index",
+                        description: "企业合作"
+                    },
+                    {
+                        href: "http://www.10086.cn/web_notice/navigation",
+                        description: "站点导航"
+                    },
+                    {
+                        href: "http://www.cmdi.chinamobile.com",
+                        description: "中国移动设计院"
+                    },
+                    {
+                        href: "http://www.hk.chinamobile.com/sc",
+                        description: "中国移动香港公司"
+                    },
+                    {
+                        href: "https://zhengqi.10086.cn",
+                        description: "政企客户分公司"
+                    },
+                    {
+                        href: "http://www.10086.cn/cmdha",
+                        description: "数字家庭合作联盟"
+                    },
+                    {
+                        href: "http://www.zj.10086.cn/sitemap",
+                        description: "网站地图"
+                    },
+                    {
+                        href: "http://www.10086.cn/web_notice/links",
+                        description: "友情链接"
+                    }
+                ],
+                secondLineData: [
+                    "掌上营业厅：wap.10086.cn",
+                    "语音自助服务：10086",
+                    "短信营业厅：10086",
+                    "自助终端",
+                    "营业厅",
+                    "中国移动客户端下载"
+                ],
+                thirdLineData: [
+                    "Copyright©1999-2019",
+                    "中国移动",
+                    "版权所有",
+                    "本网站支持IPv6访问"
+                ],
+                fourthLineData: [
+                    "中华人民共和国增值电信业务经营许可证",
+                    "经营许可证编号：A2.B1.B2-20100001"
+                ]
+            }
+        })
+    </script>
+
+    <div class="floating_window_right1">
+        <dl>
+            <dt></dt>
+            <dd v-bind:class="link.class" v-for="link in links">
+                <span></span>
+                <div class="floating_left"><a v-bind:href="link.href" target="_blank">{{link.description}}</a>
+                </div>
+            </dd>
+        </dl>
+    </div>
+    <script>
+        new Vue({
+            el: ".floating_window_right1",
+            data: {
+                links: [
+                    {
+                        class: "online_consult",
+                        href: "https://kfol.cmcc-cs.cn/ngmmgw/src/index.html",
+                        description: "在线咨询"
+                    },
+                    {
+                        class: "common_problem",
+                        href: "http://www.10086.cn/support/selfservice/help/zj",
+                        description: "常见问题"
+                    },
+                    {
+                        class: "complain_suggestion",
+                        href: "http://www.10086.cn/support/selfservice/suggest",
+                        description: "投诉建议"
+                    }
+                ]
+
+            }
+        })
+    </script>
+
+    <div class="floating_window_right2">
+        <dl>
+            <dt></dt>
+            <dd v-for="link in links">
+                <a v-bind:href="link.href">{{link.floor}}</a>
+            </dd>
+        </dl>
+    </div>
+    <script>
+        new Vue({
+            el: ".floating_window_right2",
+            data: {
+                links: [
+                    {
+                        href: "#_1F_discount_p",
+                        floor: "1F"
+                    }, {
+                        href: "#_2F_business_recommend_p",
+                        floor: "2F"
+                    }, {
+                        href: "#_3F_phone_area_p",
+                        floor: "3F"
+                    }, {
+                        href: "#_4F_smart_hardware_p",
+                        floor: "4F"
+                    }, {
+                        href: "#_5F_migoo_happy_p",
+                        floor: "5F"
+                    }, {
+                        href: "#welcome_first",
+                        floor: "顶"
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

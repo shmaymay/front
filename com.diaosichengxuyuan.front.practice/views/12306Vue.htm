@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>中国铁路12306</title>
+
+    <!-- 外部样式 -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/12306.css">
+    <!-- vue.js -->
+    <script src="javascripts/vue-2.6.10.js"></script>
+
+    <script>
+        function onSearch() {
+            window.open("https://www.baidu.com", "_blank");
+        }
+    </script>
+</head>
+
+<body>
+    <div id="identifierBar">
+        <img id="identifierBar_img1" src="/images/12306/identifier.jpg" />
+        <div id="identifierBar_div1">
+            <input id="identifierBar_div1_input1" type="text">
+            <input id="identifierBar_div1_input2" type="button" value="搜索" onclick="onSearch()">
+        </div>
+        <a id="identifierBar_a1" href="https://kyfw.12306.cn/otn/resources/login.html">登录</a>
+        <a id="identifierBar_a2" href="https://kyfw.12306.cn/otn/regist/init">注册</a>
+    </div>
+
+    <div id="titleBar">
+        <select name="ticketSelection">
+            <option>单程</option>
+            <option>往返</option>
+            <option>改签</option>
+        </select>
+        <select name="bulkSelection">
+            <option>务工团体</option>
+            <option>学生团体</option>
+        </select>
+        <select name="vipSelection">
+            <option>积分管理</option>
+            <option>会员管理</option>
+            <option>会员中心</option>
+        </select>
+        <select name="travelSelection">
+            <option>保险</option>
+            <option>旅游</option>
+            <option>餐饮</option>
+        </select>
+        <select name="outingSelection">
+            <option>车票</option>
+            <option>购票</option>
+            <option>退票</option>
+        </select>
+        <select name="informationSelection">
+            <option>email</option>
+            <option>phone number</option>
+            <option>wicket</option>
+        </select>
+    </div>
+
+    <div id="ticket">
+        <img id="ticket_img1" src="/images/12306/ticket.jpg">
+    </div>
+
+    <div id="otherService">
+        <a href="https://www.12306.cn"> <img src="/images/12306/vipCustomer.jpg"></a>
+        <a href="https://www.12306.cn"> <img src="/images/12306/lostAndFound.jpg"></a>
+        <a href="https://www.12306.cn"> <img src="/images/12306/outSharing.jpg"></a>
+        <a href="https://www.12306.cn"> <img src="/images/12306/shipping.jpg"></a>
+        <a href="https://www.12306.cn"> <img src="/images/12306/feedback.jpg"></a>
+    </div>
+
+    <div id="specialService">
+        <table>
+            <tr>
+                <td><img src="/images/12306/specialService1.jpg" width="100%" height="100%"></td>
+                <td><img src="/images/12306/specialService2.jpg" width="100%" height="100%"></td>
+            </tr>
+            <tr>
+                <td><img src="/images/12306/specialService3.jpg" width="100%" height="100%"></td>
+                <td><img src="/images/12306/specialService4.jpg" width="100%" height="100%"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="travel">
+        <b id="travel_b1">铁路旅游 {{evaluateElementsNum()}}</b>
+        <table id="travel_table1">
+            <tr>
+                <td><img src="/images/12306/travel1.jpg" width="80%" height="80%"></td>
+                <td><img src="/images/12306/travel2.jpg" width="80%" height="80%"></td>
+                <td><img src="/images/12306/travel3.jpg" width="80%" height="80%"></td>
+            </tr>
+            <tr>
+                <td><img src="/images/12306/travel4.jpg" width="80%" height="80%"></td>
+                <td><img src="/images/12306/travel5.jpg" width="80%" height="80%"></td>
+                <td><img src="/images/12306/travel6.jpg" width="80%" height="80%"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#travel",
+            methods: {
+                evaluateElementsNum: function () {
+                    var element = "travel_table1";
+                    var doc = document.getElementById(element);
+                    if (doc == null) {
+                        return "没有此元素：" + element;
+                    }
+
+                    var rows = doc.rows.length;
+                    var cells = doc.rows.item(0).cells.length;
+                    var all = rows * cells;
+
+                    return "总元素个数为：" + all;
+                }
+            }
+        })
+
+    </script>
+
+    <div id="railwayNews">
+        <ul>
+            <li>
+                <input type="radio" name="check" id="active1" checked><label for="active1">最新发布</label>
+                <div>　　当旅客在12306网站（含手机客户端）购票，输入乘车日期、发到站等信息查询没有余票时，页面会在相关车<br />
+                    　　次的席别余票显示列表中出现“候补”字样，旅客可根据需求点击相应车次、席别对应的“候补”区域，系<br />
+                    　　统将该需求自动加入当前候补购票需求列表。<br />
+                    　　每位用户可提交1个候补订单，1个订单中可添加发到站相同（可以是同城的不同车站）的2个相邻的乘车日期，<br />
+                    　　每个乘车日期可添加2个不同“车次+席别”的组合需求。<br />
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="check" id="active2"><label for="active2">常见问题</label>
+                <div>实名制车票</div>
+            </li>
+            <li>
+                <input type="radio" name="check" id="active3"><label for="active3">信用信息</label>
+                <div>失信被执行人(自然人)公示</div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="friendlyLink">
+        <b id="friendlyLink_b1">铁路旅游</b><br />
+        <img src="/images/12306/friendlyLink.jpg">
+    </div>
+
+</body>
+
+</html>

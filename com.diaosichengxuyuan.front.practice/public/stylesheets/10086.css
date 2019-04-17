@@ -66,6 +66,7 @@ a {
 
 .all_product_list li {
     padding-left: 70px;
+    margin-bottom: 20px;
     background: url("../images/10086/all_business_list_p1.jpg") no-repeat 10px 3px;
 }
 
@@ -327,6 +328,7 @@ a {
 .end_page a {
     font-size: small;
     color: black;
+    margin-left: 5px;
 }
 
 #end_page_first_line {
